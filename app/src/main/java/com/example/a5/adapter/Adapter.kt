@@ -13,7 +13,7 @@ class Adapter(private val context: Context, private val memberS: ArrayList<Membe
 
     private fun init(holder: RV_ViewHolder, memberS: Members) {
         holder.recycler.layoutManager = GridLayoutManager(context,1)
-        holder.recycler.adapter = SubAdapter(memberS.members!!)
+        holder.recycler.adapter = SubAdapter(memberS.members)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -25,6 +25,7 @@ class Adapter(private val context: Context, private val memberS: ArrayList<Membe
     }
 
     override fun getItemCount(): Int {
+        /////
         return memberS.size
     }
     class RV_ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
